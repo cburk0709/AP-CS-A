@@ -16,7 +16,7 @@ public class RocketProject {
         line();
         bottomSection();
         Line();
-        conePart();
+        cone();
     }
   
     public static void cone() {   //Prints the cone at the top and bottom
