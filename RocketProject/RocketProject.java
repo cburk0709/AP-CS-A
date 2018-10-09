@@ -1,25 +1,25 @@
 /*
-	*Connor Burk
+	*Thomas Pentimonti
 	*AP CS A
 	*Period 1
-	*October 3rd, 2018
-	*Scaleable Rocket Project
+	*October 8th, 2018
+	*Rocket Project
  */
 public class RocketProject {
 
     public static final int SIZE = 4;
-    //Prints an ASCII rocket whose size can be modified by changing the final var
+    //Prints the rocket
     public static void main(String[] args) {
-        conePart();
-        seperatorLine();
-        topFuselage();
-        seperatorLine();
-        bottomFuselage();
-        seperatorLine();
+        cone();
+        Line();
+        topSection();
+        line();
+        bottomSection();
+        Line();
         conePart();
     }
-    //Prints the cone pattern used at the top and bottom of the rocket
-    public static void conePart() {
+  
+    public static void cone() {   //Prints the cone at the top and bottom
 			for(int j = 1; j <= (SIZE * 2 - 1); j++) {
 				for(int i = j; i <= (SIZE * 2 - 1); i++) {
 					System.out.print(" ");
@@ -34,21 +34,20 @@ public class RocketProject {
 				System.out.println(" ");
 			}
     }
-    //Combines later methods so that they are called as one in the main method
-    public static void topFuselage() {
-        upCone();
-        downCone();
+    
+    public static void topSection() { //Combines cone methods to make one design inside top section
+        upDesign();
+        downDesign();
     }
-    //Combines methods in a different order
-    public static void bottomFuselage() {
+   
+    public static void bottomSection() { //Combines methods in a different order to make a different design in the bottom section 
         downCone();
         upCone();
     }
-    //Method for printing the upward facing pattern
-    public static void upCone() {
+    
+    public static void upDesign() { //prints inside design facing up
 			for(int i = 1; i <= SIZE; i++) {
 				System.out.print("|");
-				//This loop makes it so that the cone pattern is printed twice
 				for(int b = 1; b <= 2; b++) {
 					for(int j = i; j < SIZE; j++) {
 						System.out.print(".");
@@ -63,11 +62,10 @@ public class RocketProject {
 				System.out.println("|");
 				}
 			}
-    //Method of printing the downward facing pattern
-    public static void downCone() {
+    
+    public static void downDesign() { //prints inside design facing down
 			for(int i = 0; i < SIZE; i++) {
 				System.out.print("|");
-				//This loop makes it so that the cone pattern is printed twice
 				for(int b = 1; b <= 2; b++) {
 					for(int j = 1; j <= i; j++) {
 						System.out.print(".");
@@ -82,11 +80,10 @@ public class RocketProject {
 				System.out.println("|");
 			}
     }
-    //Method for printing the seperator
-    public static void seperatorLine() {
+   
+    public static void line() {  //prints line
         System.out.print("+");
-	//SIZE is multiplied by 2 so that it prints the '=*' enough times to fill its line
-        for(int i = 1; i <= (SIZE * 2); i++) {
+	for(int i = 1; i <= (SIZE * 2); i++) {
             System.out.print("=*");
         }
         System.out.println("+");
